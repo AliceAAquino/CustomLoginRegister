@@ -11,40 +11,45 @@
                     Factory Information
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('factories.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
+                    <a href="{{ route('employees.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
                 </div>
             </div>
             <div class="card-body">
 
                     <div class="row">
-                        <label for="factory_name" class="col-md-4 col-form-label text-md-end text-start">Factory Name: </label>
+                        <label for="firstname" class="col-md-4 col-form-label text-md-end text-start">First Name: </label>
                         <div class="col-md-6" style="line-height: 35px;">
-                            {{ $factory->factory_name }}
+                            {{ $employee->firstname }}
                         </div>
                     </div>
 
                     <div class="row">
-                        <label for="location" class="col-md-4 col-form-label text-md-end text-start">Location: </label>
+                        <label for="lastname" class="col-md-4 col-form-label text-md-end text-start">Last Name: </label>
                         <div class="col-md-6" style="line-height: 35px;">
-                            {{ $factory->location }}
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <label for="email" class="col-md-4 col-form-label text-md-end text-start">Email: </label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $factory->email }}
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <label for="website" class="col-md-4 col-form-label text-md-end text-start">Website: </label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $factory->website }}
+                            {{ $employee->lastname }}
                         </div>
                     </div>
                    
-        
+                     <div class="row">
+                        <label for="factory_id" class="col-md-4 col-form-label text-md-end text-start">Factory: </label>
+                        <div class="col-md-6" style="line-height: 35px;">
+                            {{ $factories[0] }}
+                        </div>
+                    </div>
+
+                     <div class="row">
+                        <label for="email" class="col-md-4 col-form-label text-md-end text-start">Email: </label>
+                        <div class="col-md-6" style="line-height: 35px;">
+                            {{ $employee->email }}
+                        </div>
+                    </div>
+                    
+                     <div class="row">
+                        <label for="phone" class="col-md-4 col-form-label text-md-end text-start">Phone: </label>
+                        <div class="col-md-6" style="line-height: 35px;">
+                            {{ $employee->phone }}
+                        </div>
+                    </div>
             </div>
         </div>
     </div>    

@@ -64,10 +64,12 @@ class EmployeeController extends Controller
     {
         if(Auth::check())
         {
-
+            $data['factories'] = Factory::where('id', $employee->factory_id)->pluck('factory_name');
+            // dd($data['factories']);
             return view('employees.show', [
                 'employee' => $employee
-            ]);
+            ], $data);
+
         }
             return redirect()->route('login');
     }
@@ -102,7 +104,7 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        $employee->update($request->all());
+        $employee->delete();
         // return redirect()->back()
         //         ->withSuccess('Product is updated successfully.');
         return redirect()->route('employees.index')
